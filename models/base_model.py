@@ -13,7 +13,7 @@ class BaseModel:
         """Initialization method"""
         if kwargs:
             for k, v in kwargs.items():
-                if k is not '__class__':
+                if k != '__class__':
                     if k in ('created_at', 'updated_at'):
                         setattr(self, k, datetime.strptime(
                             v, "%Y-%m-%dT%H:%M:%S.%f"))
