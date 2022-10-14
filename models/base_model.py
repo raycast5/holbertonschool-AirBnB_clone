@@ -4,6 +4,7 @@
 from datetime import datetime
 import json
 from uuid import uuid4
+import models
 
 
 class BaseModel:
@@ -23,6 +24,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """Returns a string representation of base"""
@@ -33,7 +35,7 @@ class BaseModel:
         """Updates the update time"""
 
         self.updated_at = datetime.now()
-
+        models.storage.save()
     def to_dict(self):
         """Returns a dict of the instance"""
 
