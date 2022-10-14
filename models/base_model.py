@@ -5,7 +5,7 @@ from datetime import datetime
 import json
 from uuid import uuid4
 import models
-
+import copy
 
 class BaseModel:
     """A new class called Base"""
@@ -39,7 +39,7 @@ class BaseModel:
     def to_dict(self):
         """Returns a dict of the instance"""
 
-        inst_dict = self.__dict__
+        inst_dict = copy.deepcopy(self.__dict__)
         inst_dict.update({"__class__": f"{self.__class__.__name__}"})
         inst_dict["created_at"] = (self.created_at.isoformat())
         inst_dict["updated_at"] = (self.updated_at.isoformat())
