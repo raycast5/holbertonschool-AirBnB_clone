@@ -6,7 +6,7 @@ from models.base_model import BaseModel
 class Review(BaseModel):
     """
     A new class called Review
-    
+
     Attributes:
     place_id: string - empty string: it will be the Place.id
     user_id: string - empty string: it will be the User.id

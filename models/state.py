@@ -6,7 +6,7 @@ from models.base_model import BaseModel
 class State(BaseModel):
     """
     A new class called State
-    
+
     Attributes:
     name (str): State name
 
