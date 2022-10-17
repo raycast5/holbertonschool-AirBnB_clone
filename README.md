@@ -30,14 +30,13 @@ We will use it to manage the objects of our project:
 
 
 ## Usage of Command Interpreter
-- Opening
-Navigate to the directory containing the console.py file
+- Opening: Navigate to the directory containing the console.py file
 ```
 $ ./console.py
 (hbnb) 
 ```
 
-- Using help command
+- Using help command:
 ```
 (hbnb) help
 
@@ -49,8 +48,7 @@ EOF  all  create  destroy  help  quit  show  update
 ```
 Using help + any of the commands listed above will give you a description of each of the commands.
 
-- Non Interactive Mode
-Using the command interpreter in non interactive mode is possible:
+- Non Interactive Mode: Using the command interpreter in non interactive mode is possible:
 ```
 $echo "show Amenity c4bf43ae-35e9-4d6d-bb7f-b3ca1ca86acd" | ./console.py
 (hbnb)
