@@ -2,6 +2,8 @@
 """"Module containing a class"""
 
 import cmd
+import sys
+from os import isatty
 
 from models import storage
 from models.amenity import Amenity
@@ -15,7 +17,10 @@ from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
-    prompt = "(hbnb) "
+    if sys.stdin.isatty():
+        prompt = "(hbnb) "
+    else:
+        prompt = "(hbnb)\n"
     class_names = ["BaseModel", "User", "Amenity",
                    "City", "Place", "Review", "State"]
 
@@ -100,6 +105,11 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
 
     def do_all(self, args):
+        """
+        Shows all instances of specified class
+        if given class name as argument or all instances
+        of all classes
+        """
         args = args.split()
         inst_dic = storage.all()
         class_list = []
