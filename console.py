@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
             elif len(args) < 3:
                 print("** attribute name missing **")
             elif len(args) < 4:
-                print("** attribute name missing **")
+                print("** value missing **")
             else:
                 setattr(inst_list[fullname], args[2], args[3])
                 storage.save()
