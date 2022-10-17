@@ -22,9 +22,17 @@ class TestFileStorage(unittest.TestCase):
         with open("file.json", "r") as f:
             self.assertIn(fullname, f.read())
 
+    def test_save_arg(self):
+        b = BaseModel()
+        with self.assertRaises(TypeError):
+            b.save(None)
+
     def test_all(self):
         """Test if all returns dict"""
         self.assertIsInstance(self.b1.all(), dict)
+
+    def test_no_args(self):
+        self.assertEqual(BaseModel, type(BaseModel()))
 
 
     def test_attr(self):
