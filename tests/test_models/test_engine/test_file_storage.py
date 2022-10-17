@@ -26,10 +26,10 @@ class TestFileStorage(unittest.TestCase):
         """Test if all returns dict"""
         self.assertIsInstance(self.b1.all(), dict)
 
-    """
+
     def test_attr(self):
-        Test file storage attributes
-        self.assertIsInstance(self.b0.__file_path, str)
-        self.assertEqual(self.b0.__file_path, "file.json")
-        self.assertIsInstance(self.b0.__objects, dict)
-    """
+        """Test file storage attributes"""
+        self.assertIsInstance(self.b0.get_file_path(), str)
+        self.assertEqual(self.b0.get_file_path(), "file.json")
+        self.assertIsInstance(self.b0.get_objects(), dict)
+
