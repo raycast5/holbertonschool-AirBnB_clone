@@ -10,7 +10,7 @@ from models.engine.file_storage import FileStorage
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
-    class_names = ["BaseModel"]
+    class_names = ["BaseModel", "User"]
 
     def emptyline(self):
         pass
