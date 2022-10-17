@@ -1,4 +1,4 @@
-https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221017%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221017T064454Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ad49642a3ff2b9bfcc46b25d5bcde47ff97b011ac505935fa0b618b106ffaa7f![image](https://user-images.githubusercontent.com/104580766/196107893-99867696-ebc0-490e-88d4-bd159ceb841f.png)
+![image](https://user-images.githubusercontent.com/104580766/196107893-99867696-ebc0-490e-88d4-bd159ceb841f.png)
 
 # Project: AirBnB clone - The console
 
