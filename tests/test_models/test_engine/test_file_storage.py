@@ -27,6 +27,7 @@ class TestFileStorage(unittest.TestCase):
         """Test Save"""
         models.storage.new(self.b2)
         models.storage.save()
+        self.b2.save()
         fullname = "BaseModel." + self.b2.id
         with open("file.json", "r") as f:
             self.assertIn(fullname, f.read())
