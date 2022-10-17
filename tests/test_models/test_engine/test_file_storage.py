@@ -20,7 +20,7 @@ class TestFileStorage(unittest.TestCase):
         self.b2.save()
         fullname = "BaseModel." + self.b2.id
         with open("file.json", "r") as f:
-            self.assertIsInstance(fullname, f.read())
+            self.assertIn(fullname, f.read())
 
     def test_all(self):
         """Test if all returns dict"""
