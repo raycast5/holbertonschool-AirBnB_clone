@@ -4,14 +4,20 @@
 import cmd
 
 from models import storage
+from models.amenity import Amenity
 from models.base_model import BaseModel
+from models.city import City
 from models.engine.file_storage import FileStorage
+from models.place import Place
+from models.review import Review
+from models.state import State
 from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
-    class_names = ["BaseModel", "User"]
+    class_names = ["BaseModel", "User", "Amenity",
+                   "City", "Place", "Review", "State"]
 
     def emptyline(self):
         pass
@@ -26,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """Creates new instance"""
-        args= args.split()
+        args = args.split()
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in HBNBCommand.class_names:
@@ -70,7 +76,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 del inst_list[fullname]
                 storage.save()
-    
+
     def do_update(self, args):
         """Updates an instance with specified parameters"""
         args = args.split()
@@ -93,7 +99,6 @@ class HBNBCommand(cmd.Cmd):
                 setattr(inst_list[fullname], args[2], args[3])
                 storage.save()
 
-
     def do_all(self, args):
         args = args.split()
         inst_dic = storage.all()
@@ -110,6 +115,7 @@ class HBNBCommand(cmd.Cmd):
                     if v.__class__.__name__ == args[0]:
                         class_list.append(str(v))
         print(class_list)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
