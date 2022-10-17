@@ -15,8 +15,9 @@ class TestBaseModel(unittest.TestCase):
 
     def test_init(self):
         """Test initialization"""
+        original_date = self.b1.updated_at
         self.b1.save()
-        self.assertNotEqual(self.b1.updated_at, self.b1.updated_at)
+        self.assertNotEqual(original_date, self.b1.updated_at)
         self.assertNotEqual(self.b1.created_at, self.b1.updated_at)
 
     def test_to_dict(self):
