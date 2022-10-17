@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """"Module containing a class"""
-
-from datetime import datetime
-import json
-from uuid import uuid4
-import models
 import copy
+import json
+from datetime import datetime
+from uuid import uuid4
+
+import models
+
 
 class BaseModel:
+
     """A new class called Base"""
 
     def __init__(self, *args, **kwargs):
@@ -36,6 +38,7 @@ class BaseModel:
 
         self.updated_at = datetime.now()
         models.storage.save()
+
     def to_dict(self):
         """Returns a dict of the instance"""
 
