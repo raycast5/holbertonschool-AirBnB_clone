@@ -36,8 +36,10 @@ class TestFileStorage(unittest.TestCase):
         """Test if all returns dict"""
         self.assertIsInstance(self.b1.all(), dict)
 
-    def test_no_args(self):
+    def test_init(self):
+        """Tests initialization"""
         self.assertEqual(BaseModel, type(BaseModel()))
+        self.assertEqual(type(models.storage), FileStorage)
 
     def test_attr(self):
         """Test file storage attributes"""
