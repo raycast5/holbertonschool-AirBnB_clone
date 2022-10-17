@@ -3,6 +3,7 @@
 
 import unittest
 
+from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 
 
@@ -10,23 +11,17 @@ class TestFileStorage(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        cls.b0 = FileStorage()
         cls.b1 = FileStorage()
-        cls.b2 = FileStorage()
+        cls.b2 = BaseModel()
 
-    def test_init(self):
-        """Test initialization"""
-        self.b1.save()
-        self.assertNotEqual(self.b1.created_at, self.b1.updated_at)
+    def test_save(self):
+        """Test Save"""
+        self.b2.save()
+        fullname = "BaseModel." + self.b2.id
+        with open("file.json", "r") as f:
+            self.assertIn(fullname, f.read())
 
-    def test_to_dict(self):
-        """Test that it saves a dict"""
-        self.assertIsInstance(self.b1.to_dict(), dict)
-
-    def test_id(self):
-        """Test id"""
-        self.assertNotEqual(self.b1.id, self.b2.id)
-        self.assertIsInstance(self.b1.id, str)
-
-    def test_str(self):
-        """Test if __str__ returns str"""
-        self.assertIsInstance(self.b1.__str__(), str)
+    def test_all(self):
+        """Test if all returns dict"""
+        self.assertIsInstance(self.b1.all(), dict)
